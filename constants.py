@@ -24,11 +24,14 @@ DEFAULT_USERS: Dict[str, List[str]] = initial_users(NR_USERS, NAMES, DATASET)
 
 # DEBUGGING
 
-# debugging
+# print(DEFAULT_USERS)
+
 i = 1
+'''
 # for debugging
 for playlist in DEFAULT_PLAYLISTS:
     print(f"playlist {i}:\n")
     print(playlist)
     print("\n")
     i+=1
+'''
