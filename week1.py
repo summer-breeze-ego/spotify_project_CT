@@ -82,7 +82,8 @@ def discover_weekly_1(user: List[str], playlists: List[List[str]]) -> List[str]:
         end = len(playlist) - 1
         quicksort(playlist, start, end)
         binum = special_binary_search(playlist, user)
-        if binum >= 3 and binum <= 47:
+        new_songs = len(playlist) - 3
+        if binum >= 3 and binum <= new_songs:
             recommended_playlists.append(playlist)
     last = len(recommended_playlists) - 1
     first = 0
