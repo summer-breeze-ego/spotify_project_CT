@@ -1,10 +1,11 @@
+# main python file
+
+# imports
 from extra_functions import *
 from constants import *
 from week1 import *
 from week2 import *
 from week3 import *
-
-# main python file
 
 # testing week1 code
 for user in DEFAULT_USERS:
