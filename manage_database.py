@@ -2,12 +2,19 @@
 import re
 import ast
 from typing import Dict, List
+import fileinput
 
 # initiating needed constants
 FILENAME = 'users_database.txt'
 
 # function to initiate database
 def init_db(filename: str, users: Dict[str, List[str]]) -> None:
+    """Function initiates database of users and their initial playlists as text file.
+
+    Args:
+        filename (str): path to database file (existing or not)
+        users (Dict[str, List[str]]): dictionary of users and their playlists.
+    """
 
     # writing to file initially
     with open(filename, 'w') as filewrite:
@@ -38,4 +45,19 @@ def pull_db(filename: str) -> None:
 
             print(f"user {username} listens to {str(playlist)}\n\n\n")
 
-pull_db(FILENAME)
+# create function to input new songs to certain line
+# check if user exists and then edit line with updated list of songs
+# also able to edit username?
+def edit_user(filename: str, username: str) -> None:
+
+    playlist = ['a', 'b', 'c']
+    
+    with fileinput.FileInput(filename, inplace=True, backup='.bak') as file:
+        # loop through lines of file
+        for line in file:
+            # check if the line starts with the right username
+            if line.startswith(str(username)):
+                # replace the playlist with the updated playlist
+                line = re.sub(r"{} = .*".format(username), "{} = {}".format(username, playlist), line)
+            
+            print(line, end='')

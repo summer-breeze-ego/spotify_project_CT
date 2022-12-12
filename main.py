@@ -8,7 +8,7 @@ from week2 import *
 from week3 import *
 from manage_database import *
 
-
+'''
 # testing week1 code
 for user in DEFAULT_USERS:
 
@@ -18,6 +18,9 @@ for user in DEFAULT_USERS:
     # printing results
     print(f"For user {user} we got the following playlist: \
         {list(song for song in discover_weekly)}")
+'''
 
+# database functions
 init_db(FILENAME, DEFAULT_USERS)
 pull_db(FILENAME)
+edit_user(FILENAME, 'Vanna')
