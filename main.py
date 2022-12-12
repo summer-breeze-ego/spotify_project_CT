@@ -10,7 +10,8 @@ from week3 import *
 for user in DEFAULT_USERS:
 
     # getting result playlist from week 1
-    discover_weekly = discover_weekly_1(user[user], DEFAULT_PLAYLISTS)
+    discover_weekly = discover_weekly_1(DEFAULT_USERS[user], DEFAULT_PLAYLISTS)
 
     # printing results
-    print(f"For user {user[user]} we got the following playlist: {list(song for song in discover_weekly_1)}")
+    print(f"For user {user} we got the following playlist: \
+        {list(song for song in discover_weekly)}")

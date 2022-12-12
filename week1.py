@@ -40,6 +40,8 @@ def quicksort(playlist: List[str], start, end):
     :paran start: the starting point in the list.
     :param end: the ending point in the list.
     """
+
+    # calls the function until start < end (aka list is sorted)
     if start < end:
         piv = find_position(playlist, start, end)
 
@@ -72,30 +74,55 @@ def special_binary_search(playlist: List[str], user: List[str]) -> int:
 
 def discover_weekly_1(user: List[str], playlists: List[List[str]]) -> List[str]:
     """
-    Randomly picks 5 songs from a random playlist which has at least 3 songs the user has listened to and 3 songs he has not listened to.
+    Randomly picks 5 songs from a random playlist which has at least 3 songs
+    the user has listened to and 3 songs he has not listened to.
+
     :param user: list of songs a user listened to.
     :param playlists: list of playlists.
     """
+
+    # initializing recommended songs playlist
     recommended_playlists: List[List[str]] = []
+
+    # iterating over stock playlists 
     for playlist in playlists:
-        start = 0
-        end = len(playlist) - 1
+
+        # initializing necessary variables
+        start = 0 # beginning of list
+        end = len(playlist) - 1 # end of list
+
+        # calling quicksort on the current playlist to organise it
         quicksort(playlist, start, end)
+
+        # searches the amount of similar songs between the user playlist
+        # and the current stock playlist
         binum = special_binary_search(playlist, user)
+
         new_songs = len(playlist) - 3
+        
         if binum >= 3 and binum <= new_songs:
             recommended_playlists.append(playlist)
+
+    # initialzing variables 
     last = len(recommended_playlists) - 1
     first = 0
     i = random.randint(first, last)
-    recommended_playlists[i]
+
+    # initializing discover_weekly (playlist) variable
     discover_weekly: List[str] = []
-    for r in range(5):
+
+    # looping 5 times for 5 songs
+    for _ in range(5):
+
+        # getting a random song from the playlist
         song = random.choice(recommended_playlists[i])
+
+        # iterating until we find a new song
         while song in discover_weekly:
             song = random.choice(recommended_playlists[i])
-        if song not in discover_weekly:
-            discover_weekly.append(song)
+
+        # finally appending song to result playlist
+        discover_weekly.append(song)
 
     return discover_weekly
 
