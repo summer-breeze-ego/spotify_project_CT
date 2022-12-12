@@ -1,38 +1,41 @@
 # run this file once to create database txt file with users and their default playlists
 import re
+import ast
+from typing import Dict, List
 
-# initiating constants
+# initiating needed constants
 FILENAME = 'users_database.txt'
 
 # function to initiate database
-def init_db(filename: str) -> None:
+def init_db(filename: str, users: Dict[str, List[str]]) -> None:
 
     # writing to file initially
     with open(filename, 'w') as filewrite:
 
-        song_list = ['song1', 'song2', 'song3', 'song4', 'song5']
-
-        for i in range(0, 50):
+        # looping through users
+        for user in users:
 
             # write the username and corresponding list to the file
-            filewrite.write(f"{str(i + 1)} = {str(song_list)}\n")
+            filewrite.write(f"{user} = {users[user]}\n")
         
         filewrite.close()
 
-# creating database file
-init_db(FILENAME)
+# function to extract from text file database
+def pull_db(filename: str) -> None:
 
-# testing reading from file
-with open(FILENAME, 'r') as fileread:
+    # testing reading from file
+    with open(FILENAME, 'r') as fileread:
 
-    pattern = "(\w+) = (\w+)"
+        pattern = "(\w+) = (\[.*\])"
 
-    for line in fileread:
-        print(line)
+        for line in fileread:
+            print(line)
 
-        match = re.search(pattern, "srting = akhsbfviuasd")
+            match = re.search(pattern, line)
 
-        username = match.group(1)
-        playlist = match.group(2)
+            username = match.group(1) # gets username from database
+            playlist = ast.literal_eval(match.group(2)) #transforms list from string to actual list
 
-        print(f"{username} listens to {str(playlist)}")
+            print(f"user {username} listens to {str(playlist)}\n\n\n")
+
+pull_db(FILENAME)
