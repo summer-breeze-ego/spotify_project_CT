@@ -15,5 +15,3 @@ for user in DEFAULT_USERS:
     # printing results
     print(f"For user {user} we got the following playlist: \
         {list(song for song in discover_weekly)}")
-    
-    # trial for push/pull
