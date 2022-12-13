@@ -5,7 +5,7 @@ from extra_functions import *
 from constants import *
 from week1 import *
 from week2 import *
-from week3 import *
+# from week3 import *
 from manage_database import *
 
 '''
