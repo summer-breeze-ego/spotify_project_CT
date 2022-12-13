@@ -122,6 +122,3 @@ def add_user(filename: str, new_user: str) -> None:
         file.write(f"\n{new_user} = []")
 
         file.close()
-
-
-
