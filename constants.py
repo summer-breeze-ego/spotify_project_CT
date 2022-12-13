@@ -2,8 +2,8 @@ from typing import Dict, List
 
 from extra_functions import *
 
-import os
-os.chdir("/Users/augustincoman/Library/CloudStorage/OneDrive-Personal/University/NL Courses/Period 2/Computational Thinking/Project Spotify")
+# import os
+# os.chdir("/Users/augustincoman/Library/CloudStorage/OneDrive-Personal/University/NL Courses/Period 2/Computational Thinking/Project Spotify")
 
 # constants
 CSV_FILE_NAME = "spotify-dataset.csv" # path to csv file

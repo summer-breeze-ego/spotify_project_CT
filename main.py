@@ -1,16 +1,26 @@
+# main python file
+
+# imports
 from extra_functions import *
 from constants import *
 from week1 import *
 from week2 import *
 from week3 import *
+from manage_database import *
 
-# main python file
-
+'''
 # testing week1 code
 for user in DEFAULT_USERS:
 
     # getting result playlist from week 1
-    discover_weekly = discover_weekly_1(user[user], DEFAULT_PLAYLISTS)
+    discover_weekly = discover_weekly_1(DEFAULT_USERS[user], DEFAULT_PLAYLISTS)
 
     # printing results
-    print(f"For user {user[user]} we got the following playlist: {list(song for song in discover_weekly_1)}")
+    print(f"For user {user} we got the following playlist: \
+        {list(song for song in discover_weekly)}")
+'''
+
+# database functions
+init_db(FILENAME, DEFAULT_USERS)
+pull_db(FILENAME)
+edit_user(FILENAME, 'Vanna')
