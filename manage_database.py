@@ -29,6 +29,11 @@ def init_db(filename: str, users: Dict[str, List[str]]) -> None:
 
 # function to extract from text file database
 def pull_db(filename: str) -> None:
+    """Print all playlists from filename.
+
+    Args:
+        filename (str): filename.
+    """
 
     # testing reading from file
     with open(filename, 'r') as fileread:

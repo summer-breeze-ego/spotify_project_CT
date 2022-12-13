@@ -85,9 +85,9 @@ shifts()
 
 
 # function to recommend 5 songs to each user 
-def recommendation_shifts():
+def recommendation_shifts(filename: str):
 
-  users = open("/users_database.txt")
+  users = open(filename)
   happy = shifts()
   party = shifts()
   calming = shifts()
