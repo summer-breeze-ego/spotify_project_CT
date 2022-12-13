@@ -53,13 +53,13 @@ def playlists_from_dataset(p_len: int, dataset: List[List[str]]) -> List[List[st
 
     playlists = []
 
-    # loop creating 88 random playlists
+    # loop creating 100 random playlists
     while len(playlists) < p_len:
 
         # initializing new playlist as empty every loop
         new_playlist = []
 
-        # loop that adds 5 songs to each playlist
+        # loop that adds 50 songs to each playlist
         # until there's 50 different songs in the playlist
         while len(new_playlist) <= 50:
 
@@ -146,3 +146,57 @@ def initial_users(nr_users: int, names: List[str], dataset: List[List[str]]) -> 
         users_dict[name] = songs
 
     return users_dict
+
+# check if username is available
+def username_is_available(filename: str, username: str) -> bool:
+    # managing file
+    with open(filename, 'r') as file:
+        # loop through lines
+        for line in file:
+            # if the line starts with the username
+            if line.startswith(f"{username} ="):
+                return False # then username is not available
+        
+        file.close()
+    
+    return True
+
+# function to confirm action
+def confirmed() -> bool:
+    """Function that asks user to confirm action.
+    """
+
+    confirmed = input("Write \"CONFIRM\" to confirm action.")
+
+    if confirmed == "CONFIRM":
+        return True
+    else:
+        return False
+
+# for creating username
+def create_username(filename: str) -> str:
+    """Uses a loop to let the user chose an appropriate username and then returns it.
+
+    Arguments:
+        str: file where to store
+
+    Returns:
+        str: chosen username
+    """
+
+    # initiate username
+    username = input('What is your prefered username?')
+
+    # looping until a valid username is chosen
+    while True:
+        # check if username is available
+        if username_is_available(filename, username):
+            if confirmed():
+                print(f"Amazing username! Your account has been created!")
+                break
+            else:
+                print("Username invalid.\n")
+
+        username = input("Go ahead and choose another username")
+        
+    return username

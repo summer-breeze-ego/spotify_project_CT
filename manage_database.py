@@ -31,7 +31,7 @@ def init_db(filename: str, users: Dict[str, List[str]]) -> None:
 def pull_db(filename: str) -> None:
 
     # testing reading from file
-    with open(FILENAME, 'r') as fileread:
+    with open(filename, 'r') as fileread:
 
         pattern = "(\w+) = (\[.*\])"
 
@@ -45,12 +45,52 @@ def pull_db(filename: str) -> None:
 
             print(f"user {username} listens to {str(playlist)}\n\n\n")
 
+# to get a certain user's playlist
+def pull_user(filename: str, username: str) -> List[str]:
+    """Function returns list of username's playlist from filename database.
+
+    Args:
+        filename (str): filename for database.
+        username (str): user name.
+    """
+
+    # managing database
+    with open(filename, 'r') as file:
+
+        pattern = "(\w+) = (\[.*\])"
+
+        # for each line in the file
+        for line in file:
+
+            print(line)
+
+            # strip of newline
+            line.rstrip()
+
+            # if the line starts with the given username
+            if line.startswith(str(username)):
+                match = re.search(pattern, line)
+                
+                # getting user's playlist
+                playlist = ast.literal_eval(match.group(2)) #transforms list from string to actual list
+                
+                return playlist
+            
+        exit("Error: no such user.")
+
 # create function to input new songs to certain line
 # check if user exists and then edit line with updated list of songs
 # also able to edit username?
-def edit_user(filename: str, username: str) -> None:
+def edit_user(filename: str, username: str, playlist: List[str]) -> None:
+    """Function updates playlist for user given in the file given.
 
-    playlist = ['a', 'b', 'c']
+    Args:
+        filename (str): file database
+        username (str): username searched for
+        playlist (List[str], optional): new playlist. Defaults to [].
+    """
+
+    #playlist = ['a', 'b', 'c']
     
     with fileinput.FileInput(filename, inplace=True, backup='.bak') as file:
         # loop through lines of file
@@ -61,3 +101,22 @@ def edit_user(filename: str, username: str) -> None:
                 line = re.sub(r"{} = .*".format(username), "{} = {}".format(username, playlist), line)
             
             print(line, end='')
+
+# to add new user to database
+def add_user(filename: str, new_user: str) -> None:
+    """Function adds provided user to provided file.
+
+    Args:
+        filename (str): database file
+        new_user (str): username.
+    """
+
+    # managing file
+    with open(filename, 'a') as file:
+        # write initial username and empty list in the database
+        file.write(f"\n{new_user} = []")
+
+        file.close()
+
+
+
