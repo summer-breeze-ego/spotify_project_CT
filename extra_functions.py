@@ -2,13 +2,13 @@ import csv
 import random
 from typing import Dict, List
 import re
-
+'''
 # constants
 SEED = 111 # seed for playlists forming
 
 # defining "random" seed  - original = 111
 random.seed(SEED)
-
+'''
 def list_from_dataset(csv_path: str) -> List[str]:
     """Takes a path to a csv file and returns a list of its rows as lists.
 
