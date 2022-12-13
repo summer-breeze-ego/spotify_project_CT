@@ -44,8 +44,6 @@ def quicksort(playlist: List[str], start, end):
     :paran start: the starting point in the list.
     :param end: the ending point in the list.
     """
-    # Recursion is used, while the start value is smaller then the end value, the function is rerun.
-
     # calls the function until start < end (aka list is sorted)
     if start < end:
         # finds the position of of the last song and returns a new index for the next pivot.
