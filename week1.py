@@ -101,7 +101,10 @@ def discover_weekly_1(user: List[str], playlists: List[List[str]]) -> List[str]:
 
         # calling quicksort on the current playlist to organise it
         quicksort(playlist, start, end)
+        # binum as the number of listened songs in a playlist found with binary search.
         binum = special_binary_search(playlist, user)
+        # new songs as a number of songs, if the user has less then 3 not listened songs, 
+        # the playlist is not considered a recommended playlist.
         new_songs = len(playlist) - 3
         
         if binum >= 3 and binum <= new_songs:
@@ -114,8 +117,10 @@ def discover_weekly_1(user: List[str], playlists: List[List[str]]) -> List[str]:
     i = random.randint(first, last)
     recommended_playlists[i]
     discover_weekly: List[str] = []
+    # for 5 iterations picks a random song
     for r in range(5):
         song = random.choice(recommended_playlists[i])
+        # while the picked song is in discover weekly's list keeps picking another random song.
         while song in discover_weekly:
             song = random.choice(recommended_playlists[i])
 
