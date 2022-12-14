@@ -128,9 +128,3 @@ def discover_weekly_1(user: List[str], playlists: List[List[str]]) -> List[str]:
         discover_weekly.append(song)
 
     return discover_weekly
-
-'''
-# DEBUGGING
-for user in users:
-    print(discover_weekly_1(users[user], playlists))
-'''

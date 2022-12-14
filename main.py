@@ -10,14 +10,13 @@ from manage_database import *
 
 # database functions
 # init_db(FILENAME, DEFAULT_USERS)
-#pull_db(FILENAME)
-#edit_user(FILENAME, 'Vanna')
 
 # interacting with the user
 # greeting
 name = input("Hello! How may I adress you?\n")
 print("What a lovely name, {}!".format(name))
 print("Please read the instructions before proceeding any further.\n")
+
 print(INSTRUCTIONS)
 all_good = input("Do you understand everything? If not then you will have to restart the program. (y/n)")
 
@@ -25,7 +24,7 @@ if all_good != 'y':
     exit("Wow! Not enough brain cells I see. Buh bye, {}!".format(name))
 
 # after instructions
-print("Glad you're smart enough to comprehend a few sentences.\n\n\n------------------------------------\n          WELCOME TO Y KRAK\nYour soon to be favorite music streaming service.\n------------------------------------\n\n\nHow would you like to proceed?\n")
+print("\n\n" + AFTER_INSTRUCTIONS)
 
 # loop for first three choices: title, create user, existing user (moves on)
 while True:
@@ -75,7 +74,7 @@ while True:
     print("\n\nAnyway... What would you like to do next?\n")
 
 # now for discover weekly - the actual 
-print("Now unto the interesting stuff.\n SPOTIFY WEEKLY\n")
+print(SPOTIFY_WEEKLY)
 
 # loop to simulate discover weekly for the user user
 while True:
@@ -92,12 +91,16 @@ while True:
             # print(type(initial_playlist))
             dw1_playlist = discover_weekly_1(initial_playlist, DEFAULT_PLAYLISTS)
             # print(type(dw1_playlist))
-            # print(f"For {username} the first week playlist is {dw1_playlist}.")
 
             # managing the full playlist of old and new dw songs
             initial_playlist.extend(dw1_playlist)
             edit_user(FILENAME, username, initial_playlist)
-            print("the full updated playlist is {}".format(initial_playlist))
+            print("\n----------------------------------------------------")
+            print(f"For user {username}")
+            print("The full updated playlist is:\n")
+            for song in initial_playlist:
+                print(song)
+            print("----------------------------------------------------\n")
         
         # second choice
         case '2':

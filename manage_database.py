@@ -38,7 +38,6 @@ def pull_db(filename: str) -> None:
         pattern = "(\w+) = (\[.*\])"
 
         for line in fileread:
-            print(line)
 
             match = re.search(pattern, line)
 
@@ -63,8 +62,6 @@ def pull_user(filename: str, username: str) -> List[str]:
 
         # for each line in the file
         for line in file:
-
-            print(line)
 
             # strip of newline
             line.rstrip()
@@ -91,8 +88,6 @@ def edit_user(filename: str, username: str, playlist: List[str]) -> None:
         username (str): username searched for
         playlist (List[str], optional): new playlist. Defaults to [].
     """
-
-    #playlist = ['a', 'b', 'c']
     
     with fileinput.FileInput(filename, inplace=True, backup='.bak') as file:
         # loop through lines of file
