@@ -8,18 +8,6 @@ from week2 import *
 # from week3 import *
 from manage_database import *
 
-'''
-# testing week1 code
-for user in DEFAULT_USERS:
-
-    # getting result playlist from week 1
-    discover_weekly = discover_weekly_1(DEFAULT_USERS[user], DEFAULT_PLAYLISTS)
-
-    # printing results
-    print(f"For user {user} we got the following playlist: \
-        {list(song for song in discover_weekly)}")
-'''
-
 # database functions
 # init_db(FILENAME, DEFAULT_USERS)
 #pull_db(FILENAME)
@@ -39,6 +27,7 @@ if all_good != 'y':
 # after instructions
 print("Glad you're smart enough to comprehend a few sentences.\n\n\n------------------------------------\n          WELCOME TO Y KRAK\nYour soon to be favorite music streaming service.\n------------------------------------\n\n\nHow would you like to proceed?\n")
 
+# loop for first three choices: title, create user, existing user (moves on)
 while True:
 
     # listing options
@@ -88,7 +77,7 @@ while True:
 # now for discover weekly - the actual 
 print("Now unto the interesting stuff.\n SPOTIFY WEEKLY\n")
 
-
+# loop to simulate discover weekly for the user user
 while True:
     # listing options
     for n in range(0, len(SECOND_OPTION)):

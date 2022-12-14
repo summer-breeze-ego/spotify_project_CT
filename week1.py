@@ -1,5 +1,5 @@
 # code for week1
-# initially done by Kayra Boelen
+# by Kayra Boelen
 
 import random
 from typing import Dict, List
