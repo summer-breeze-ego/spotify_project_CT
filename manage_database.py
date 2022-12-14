@@ -4,9 +4,6 @@ import ast
 from typing import Dict, List
 import fileinput
 
-# initiating needed constants
-FILENAME = 'users_database.txt'
-
 # function to initiate database
 def init_db(filename: str, users: Dict[str, List[str]]) -> None:
     """Function initiates database of users and their initial playlists as text file.

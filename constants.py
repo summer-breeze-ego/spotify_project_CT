@@ -3,7 +3,7 @@ from typing import Dict, List
 from extra_functions import *
 
 import os
-os.chdir("/Users/augustincoman/Library/CloudStorage/OneDrive-Personal/University/NL Courses/Period 2/Computational Thinking/Project Spotify")
+os.chdir("/Users/augustincoman/Empire/Programming/spotify_project_CT")
 
 # constants
 CSV_FILE_NAME = "spotify-dataset.csv" # path to csv file
@@ -21,6 +21,7 @@ SECOND_OPTION = [
     "[2] Discover weekly 2",
     "[3] Discover weekly 3"
 ]
+FILENAME = 'users_database.txt'
 
 # getting data from csv file as list of lists
 DATASET: List[str] = list_from_dataset(CSV_FILE_NAME)

@@ -81,6 +81,7 @@ def shifts() -> List[str]:
   return party
   return calming
   return lounge
+
 shifts()
 
 
