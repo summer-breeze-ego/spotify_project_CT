@@ -96,11 +96,15 @@ while True:
             initial_playlist.extend(dw1_playlist)
             edit_user(FILENAME, username, initial_playlist)
             print("\n----------------------------------------------------")
+            print("----------------------------------------------------")
             print(f"For user {username}")
+            print("----------------------------------------------------")
             print("The full updated playlist is:\n")
             for song in initial_playlist:
                 print(song)
-            print("----------------------------------------------------\n")
+            print("----------------------------------------------------")
+            print("----------------------------------------------------")
+
         
         # second choice
         case '2':
@@ -114,5 +118,5 @@ while True:
         case _:
             exit("\nSomething ain't right, bruh, my bad...\nOr maybe you just wanted to quit...\n")
 
-    print("\n--------\ncoolio\n-------\n")
+    print("\n--------\nTHE END\n-------\n")
     break
