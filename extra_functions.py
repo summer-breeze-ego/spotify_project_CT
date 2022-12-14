@@ -93,7 +93,7 @@ def names() -> List[str]:
     # managing file
     try:
         # opening file
-        file = open("names.txt", 'r')
+        file = open("/Users/augustincoman/Empire/Programming/spotify_project_CT/data/names.txt", 'r')
         
         # loop that appends names from file to names list
         for line in file:

@@ -3,9 +3,9 @@
 # imports
 from extra_functions import *
 from constants import *
-from week1 import *
-from week2 import *
-# from week3 import *
+from discover_weekly.week1 import *
+from discover_weekly.week2 import *
+# from discover_weekly.week3 import *
 from manage_database import *
 
 # database functions
@@ -111,5 +111,5 @@ while True:
         case _:
             exit("\nSomething ain't right, bruh, my bad...\nOr maybe you just wanted to quit...\n")
 
-    print("coolio")
+    print("\n--------\ncoolio\n-------\n")
     break

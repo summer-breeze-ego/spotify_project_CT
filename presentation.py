@@ -1,8 +1,8 @@
 # imports
 from extra_functions import *
 from constants import *
-from week1 import *
-from week2 import *
+from discover_weekly.week1 import *
+from discover_weekly.week2 import *
 # from week3 import *
 
 # testing week1 code
