@@ -94,7 +94,7 @@ def discover_weekly_2(user_playlist: List[str]) -> List[str]:
 
         if technoc >= 1:
             discover_weekly = random.sample(pop, k=4)
-            discover_weekly.extend(random.sample(rock, k=1))
+            discover_weekly.extend(random.sample(techno, k=1))
             return discover_weekly
 
         discover_weekly = random.sample(pop, k=5)
@@ -129,21 +129,3 @@ def discover_weekly_2(user_playlist: List[str]) -> List[str]:
     
     
     return discover_weekly
-'''
-# List of users and songs that they have listened to prior to week 2
-
-print(discover_weekly_2(users['Daniel']))
-# There are only 3 types of categories for music
-# Rock
-# Pop
-# Techno
-# Assigning every song to one of these, else N/A
-
-
-
-
-# Check which category is the highest percentage
-
-
-# Mark that user as 'insert-category listener' and recommend 5 song
-'''
