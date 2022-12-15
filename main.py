@@ -108,7 +108,24 @@ while True:
         
         # second choice
         case '2':
-            print("case 2")
+            # getting the dw1 playlist
+            initial_playlist = pull_user(FILENAME, username)
+            # print(type(initial_playlist))
+            dw2_playlist = discover_weekly_2(initial_playlist)
+            # print(type(dw2_playlist))
+
+            # managing the full playlist of old and new dw songs
+            initial_playlist.extend(dw2_playlist)
+            edit_user(FILENAME, username, initial_playlist)
+            print("\n----------------------------------------------------")
+            print("----------------------------------------------------")
+            print(f"For user {username}")
+            print("----------------------------------------------------")
+            print("The full updated playlist is:\n")
+            for song in initial_playlist:
+                print(song)
+            print("----------------------------------------------------")
+            print("----------------------------------------------------")
 
         # third choice
         case '3':
