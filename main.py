@@ -36,7 +36,7 @@ while True:
 
     # check if respone is valid
     if first_input not in ['1', '2', '3']:
-        exit("Bruh. There's three options. Each row has a number at the beginning of the row. How ******* hard is it to chose one of those numbers.\nJesus ******* ******. {}? More like ******* *******.".format(name))
+        exit(f"Hey, {name} Maybe you should try to read the instructions with more attention next time.")
 
     # action based on user input
     match first_input:
