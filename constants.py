@@ -16,7 +16,7 @@ FIRST_OPTION = [
     "[2] New users: Choose an username and generate a random playlist for you.",
     "[3] Already have an account? Choose this."
 ]
-NAME_EXPLAIN = "--------------------------------------------------\nY KRAK\nThe name KRACK comes an old tale of 5 student from VU Amsterdam who did a great job recreating Spotify's discover weekly.\nTheir initials were A, R, Y, K, K. Rearange that and you get << Y KRAK >>.\n\nIt was also speculated at the time of their demise that they all preferred Crack Cocaine over other drugs, which begged the question:\nWhy Crack\nIt was never confirmed by the creators, but the followers can only imagine what was going on inside their minds.\n--------------------------------------------------\n"
+NAME_EXPLAIN = "--------------------------------------------------\nWHITE COKE\nWhat a great name. The names of the creators are Augustin, Kayran, Ruvan, Kornelija and Yunus. The initials are AKRKY.\nYou might have already noticed that it spells Y KRAK which can be read as White Crack.\nCrack aka Cocaine aka Coke which is how you get White Coke.\nWelcome to White Coke - so addicting it'll make your chest start hurting.\n--------------------------------------------------\n"
 SPOTIFY_WEEKLY = "Now unto the interesting stuff.\n----------\n-- SPOTIFY WEEKLY\n----------\n"
 SECOND_OPTION = [
     "[1] Discover weekly 1",
