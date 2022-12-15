@@ -16,8 +16,8 @@ def week_1() -> None:
 
         print("\n----------------------------------------------------")
         print(f"For user {user} we got the following playlist:\n")
-        for i in dw1:
-            print(i)
+        for song in dw1:
+            print(song)
         print("----------------------------------------------------\n")
 
 # testing week 2 code
@@ -25,16 +25,15 @@ def week_2() -> None:
     """Print out all playlists from week 2.
     """
 
-    genres = get_genre()
+    for user in DEFAULT_USERS:
 
-    dw2 = discover_weekly_2(DEFAULT_USERS)
+        # getting result playlist from week 3 - replace with week 3
+        dw2 = discover_weekly_2(DEFAULT_USERS[user])
 
-    for user in dw2:
-         # printing users and playlists
         print("\n----------------------------------------------------")
         print(f"For user {user} we got the following playlist:\n")
-        for i in dw2[user]:
-            print(i)
+        for song in dw2:
+            print(song)
         print("----------------------------------------------------\n")
 
 # testing week 3 code
@@ -49,8 +48,8 @@ def week_3() -> None:
 
         print("\n----------------------------------------------------")
         print(f"For user {user} we got the following playlist:\n")
-        for i in dw1:
-            print(i)
+        for song in dw1:
+            print(song)
         print("----------------------------------------------------\n")
 
 # to see all names and according playlists

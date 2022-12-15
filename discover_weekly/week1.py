@@ -111,22 +111,17 @@ def discover_weekly_1(user: List[str], playlists: List[List[str]]) -> List[str]:
         if binum >= 3 and binum <= new_songs:
             recommended_playlists.append(playlist)
 
-    # initialzing variables 
-    last = len(recommended_playlists) - 1
-    first = 0
     # a random index picked from recommended playlists
-    i = random.randint(first, last)
-    recommended_playlists[i]
+    if len(recommended_playlists) == 0:
+        exit("No playlist for this person. Fuck them.\n")
+
+    # chosing random playlist
+    i = random.sample(recommended_playlists, k=1)[0] # empty range
+    
+    # initiating the discover weekly 1 playlist
     discover_weekly: List[str] = []
 
-    # for 5 iterations picks a random song
-    for r in range(5):
-        song = random.choice(recommended_playlists[i])
-        # while the picked song is in discover weekly's list keeps picking another random song.
-        while song in discover_weekly:
-            song = random.choice(recommended_playlists[i])
-
-        # finally appending song to result playlist
-        discover_weekly.append(song)
+    # getting 5 new songs
+    discover_weekly = random.sample(i, k=5)
 
     return discover_weekly
