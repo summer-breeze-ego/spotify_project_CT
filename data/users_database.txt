@@ -101,3 +101,4 @@ Javone = ['Blow', 'How Do You Sleep?', 'Someone Like You', 'Feel This Moment (fe
 
 August = ['Jealous - Remix', 'Clown', 'First Time', 'Mmm Yeah (feat. Pitbull)', 'Been You', 'Strip That Down (feat. Quavo)', 'Swish Swish', 'Starboy', 'Happier', 'Move']
 Demi = ['Young Girls', 'Maps', 'Company', 'Say Something', 'Everybody Talks', 'Call Me Maybe', 'We Own The Night', 'International Love', 'True Colors', '24K Magic', 'Party Rock Anthem', 'The Feeling', 'Bloodstream', 'Beneath Your Beautiful', 'Sucker']
+q = ['Thinking out Loud', 'L.A.LOVE (la la)', 'Dance Again', 'Meet Me Halfway', 'Stereo Hearts (feat. Adam Levine)', 'Hello', 'Boom Boom', 'Team', 'Bodak Yellow', 'Take Me To Church', 'In the Name of Love', 'American Oxygen', 'Bloodstream', 'Happier', 'I Lived']
