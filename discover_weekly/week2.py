@@ -84,15 +84,57 @@ def discover_weekly_2(user_playlist: List[str]) -> List[str]:
         if song in techno:
             technoc += 1
     
+    popP = popc / len(user_playlist) * 100
+    rockP = rockc / len(user_playlist) * 100
+    technoP = technoc / len(user_playlist) * 100
+
+    print(f"{[popc, rockc, technoc]} : {len(user_playlist)}")
+    print(f"{popP} + {rockP} + {technoP} = {popP + rockP + technoP}")
+    
     if popc > rockc and popc > technoc:
-        discover_weekly.append(random.sample(pop, k=5))
+
+        if rockc >= 1:
+            discover_weekly = random.sample(pop, k=4)
+            discover_weekly.extend(random.sample(rock, k=1))
+            return discover_weekly
+
+        if technoc >= 1:
+            discover_weekly = random.sample(pop, k=4)
+            discover_weekly.extend(random.sample(rock, k=1))
+            return discover_weekly
+
+        discover_weekly = random.sample(pop, k=5)
+
     if rockc > popc and rockc > technoc:
+
+        if popc >= 1:
+            discover_weekly = random.sample(rock, k=4)
+            discover_weekly.extend(random.sample(pop, k=1)[0])
+            return discover_weekly
+
+        if technoc >= 1:
+            discover_weekly = random.sample(rock, k=4)
+            discover_weekly.extend(random.sample(techno, k=1))
+            return discover_weekly
+
         discover_weekly.append(random.sample(rock, k=5))
+
     if technoc > popc and technoc > rockc:
-        discover_weekly.append(random.sample(techno, k=5))
+
+        if popc >= 1:
+            discover_weekly = random.sample(techno, k=4)
+            discover_weekly.extend(random.sample(pop, k=1))
+            return discover_weekly
+
+        if rockc >= 1:
+            discover_weekly = random.sample(techno, k=4)
+            discover_weekly.extend(random.sample(rock, k=1))
+            return discover_weekly
+
+        discover_weekly = random.sample(techno, k=5)
+    
     
     return discover_weekly
-
 '''
 # List of users and songs that they have listened to prior to week 2
 
