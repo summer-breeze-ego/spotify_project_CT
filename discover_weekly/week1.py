@@ -117,9 +117,6 @@ def discover_weekly_1(user: List[str], playlists: List[List[str]]) -> List[str]:
 
     # chosing random playlist
     i = random.sample(recommended_playlists, k=1)[0] # empty range
-    
-    # initiating the discover weekly 1 playlist
-    discover_weekly: List[str] = []
 
     # getting 5 new songs
     discover_weekly = random.sample(i, k=5)
