@@ -1,5 +1,4 @@
 # Week 2 - Genres
-# by Yunus Turer
 
 # imports
 import random # Importing random for number generation
