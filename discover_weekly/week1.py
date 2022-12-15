@@ -113,7 +113,7 @@ def discover_weekly_1(user: List[str], playlists: List[List[str]]) -> List[str]:
 
     # a random index picked from recommended playlists
     if len(recommended_playlists) == 0:
-        exit("No playlist for this person. Fuck them.\n")
+        exit("No playlist for this person. **** them.\n")
 
     # chosing random playlist
     i = random.sample(recommended_playlists, k=1)[0] # empty range
