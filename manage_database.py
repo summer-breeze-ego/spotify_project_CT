@@ -53,6 +53,9 @@ def pull_user(filename: str, username: str) -> List[str]:
     Args:
         filename (str): filename for database.
         username (str): user name.
+    
+    Returns:
+        List[str]: list of songs of user.
     """
 
     # managing database
@@ -114,3 +117,22 @@ def add_user(filename: str, new_user: str) -> None:
         file.write(f"\n{new_user} = []")
 
         file.close()
+
+def edit_username(filename: str, username: str, new_username, playlist: List[str]) -> None:
+    """The function edits a username
+
+    Args:
+        filename (str): path to database file.
+    """
+    print("before file")
+    with fileinput.FileInput(filename, inplace=True, backup='.bak') as file:
+        print("before loop")
+        # loop through lines of file
+        for line in file:
+            print("before line test")
+            # check if the line starts with the OG username
+            if line.startswith(str(username)):
+                print("before replace")
+                # replace the old username with the new one
+                line = line.replace(username, new_username)
+                print(line, end='')

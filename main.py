@@ -108,11 +108,9 @@ while True:
         
         # second choice
         case '2':
-            # getting the dw1 playlist
+            # getting the dw2 playlist
             initial_playlist = pull_user(FILENAME, username)
-            # print(type(initial_playlist))
             dw2_playlist = discover_weekly_2(initial_playlist)
-            # print(type(dw2_playlist))
 
             # managing the full playlist of old and new dw songs
             initial_playlist.extend(dw2_playlist)
@@ -130,6 +128,17 @@ while True:
         # third choice
         case '3':
             print("case 3")
+        
+        # fourth choice
+        case '4':
+            print('case 4')
+            new_username = create_username(FILENAME)
+            print(f"{username} {new_username}")
+
+            # getting user's playlist
+            playlist = pull_user(FILENAME, username)
+            edit_username(FILENAME, username, new_username, playlist)
+            print("Your username has been changed from {} to {}".format(username, new_username))
         
         # default case
         case _:
