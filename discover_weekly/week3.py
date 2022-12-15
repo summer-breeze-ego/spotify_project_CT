@@ -7,7 +7,7 @@ SEED = 111 # seed for playlists forming
 
 # defining "random" seed  - original = 111
 random.seed(SEED)
-csv_path = 'spotify-dataset.csv'
+csv_path = 'data/spotify-dataset.csv'
 
 def list_from_dataset(csv_path: str) -> List[str]:
     """Takes a path to a csv file and returns a list of its rows as lists.
