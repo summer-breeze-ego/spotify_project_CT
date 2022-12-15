@@ -16,4 +16,4 @@ You can either uncomment the line in the main.py file the first time you run it 
 Using main.py it becomes a bit of a game. If you run it you can choose from multiple choices what to do at different steps, like creating a user, running one of the discover weekly algorithms on an existing one and seeing the meaning behind the name of the project.
 
 ## 2. presentation.py
-Using presentation.py you can run one of the 3 discover weekly algorithms or just print all the default algorithms.
+Using presentation.py you can run one of the 3 discover weekly algorithms or just print all the default user-playlist duets..

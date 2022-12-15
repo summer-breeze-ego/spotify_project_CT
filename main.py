@@ -21,7 +21,7 @@ print(INSTRUCTIONS)
 all_good = input("Do you understand everything? If not then you will have to restart the program. (y/n)")
 
 if all_good != 'y':
-    exit("Wow! Not enough brain cells I see. Buh bye, {}!".format(name))
+    exit("Wow, ok! Buh bye, {}!".format(name))
 
 # after instructions
 print("\n\n" + AFTER_INSTRUCTIONS)
@@ -36,7 +36,7 @@ while True:
 
     # check if respone is valid
     if first_input not in ['1', '2', '3']:
-        exit(f"Hey, {name} Maybe you should try to read the instructions with more attention next time.")
+        exit(f"Hey, {name}? Maybe you should try to read the instructions with more attention next time.")
 
     # action based on user input
     match first_input:
