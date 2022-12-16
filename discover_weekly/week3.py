@@ -147,7 +147,7 @@ def discover_weekly_3(users_playlist: List[str]) -> List[str]:
 		else:
 			discover_weekly = random.sample(party, k=5)
 
-	# if rate_lounge is dominant
+	# if rate_calming is dominant
 	if rate_calming > rate_party and rate_calming > rate_happy:
 		
 		# if rate_happy second place
