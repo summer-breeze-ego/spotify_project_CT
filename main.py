@@ -18,7 +18,7 @@ print("What a lovely name, {}!".format(name))
 print("Please read the instructions before proceeding any further.\n")
 
 print(INSTRUCTIONS)
-all_good = input("Do you understand everything? If not then you will have to restart the program. (y/n)")
+all_good = input("Do you understand everything? If not then you will have to restart the program. (y/n)\nUnderstood? ")
 
 if all_good != 'y':
     exit("Wow, ok! Buh bye, {}!".format(name))
@@ -127,22 +127,17 @@ while True:
 
         # third choice
         case '3':
-            # getting the dw3 playlist
-            initial_playlist = pull_user(FILENAME, username)
-            dw3_playlist = discover_weekly_3(initial_playlist)
+            # asking username
+            username = input("What's your username?\nYour response: ")
 
-            # managing the full playlist of old and new dw songs
-            initial_playlist.extend(dw3_playlist)
-            edit_user(FILENAME, username, initial_playlist)
-            print("\n----------------------------------------------------")
-            print("----------------------------------------------------")
-            print(f"For user {username}")
-            print("----------------------------------------------------")
-            print("The full updated playlist is:\n")
-            for song in initial_playlist:
-                print(song)
-            print("----------------------------------------------------")
-            print("----------------------------------------------------")
+            # username is not in database
+            if username_is_available(FILENAME, username):
+                print("\nThis username doesn't exist in our database.\n\n")
+                continue
+
+            # checks out
+            print("\nChecks out!")
+            break
         
         # fourth choice
         case '4':

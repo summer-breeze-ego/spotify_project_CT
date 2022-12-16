@@ -54,7 +54,8 @@ def week_3() -> None:
 
 # to see all names and according playlists
 def all_users() -> None:
-    """Print out all default playlists and users.
+    """Print out a list of default playlists and users.
+    It is possible to uncomment random.seed at the top of "constants" to get the same users every time.
     """
     for user in DEFAULT_USERS:
          # printing users and playlists

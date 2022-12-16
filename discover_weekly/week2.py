@@ -3,7 +3,7 @@
 # imports
 import random # Importing random for number generation
 import csv # Import and opening CSV with data
-from typing import Tuple, Dict, List
+from typing import Tuple, List
 
 import os
 os.chdir("/Users/augustincoman/Empire/Programming/spotify_project_CT")

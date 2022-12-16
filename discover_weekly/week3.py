@@ -18,7 +18,7 @@ def list_from_dataset(csv_path: str) -> List[str]:
         List[str]: list of song details.
     """
 
-  # step 0: open file
+  	# step 0: open file
     csv_file = open(csv_path)
 
     # reading csv file

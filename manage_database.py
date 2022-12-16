@@ -131,7 +131,7 @@ def edit_username(filename: str, username: str, new_username, playlist: List[str
         for line in file:
 
             # check if the line starts with the OG username
-            if line.startswith(str(username)):
+            if line.startswith(str(username) + ' '):
 
                 # replace the old username with the new one
                 line = line.replace(username, new_username)

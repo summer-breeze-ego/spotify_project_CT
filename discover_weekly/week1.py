@@ -105,7 +105,7 @@ def discover_weekly_1(user: List[str], playlists: List[List[str]]) -> List[str]:
         if binum >= 3 and binum <= new_songs:
             recommended_playlists.append(playlist)
 
-    # a random index picked from recommended playlists
+    # if there's nothing for this person the program exits
     if len(recommended_playlists) == 0:
         exit("No playlist for this person.\n")
 

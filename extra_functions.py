@@ -188,8 +188,8 @@ def create_username(filename: str) -> str:
             if confirmed():
                 print(f"Amazing username! Your account has been created!\n")
                 break
-            else:
-                print("Username invalid.\n")
+        else:
+            print("Username invalid.\n")
 
         username = input("Go ahead and choose another username\nUsername: ")
         
