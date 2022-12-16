@@ -160,7 +160,7 @@ def confirmed() -> bool:
     """Function that asks user to confirm action.
     """
 
-    confirmed = input("Write \"CONFIRM\" to confirm action.")
+    confirmed = input("Write \"CONFIRM\" to confirm action.\n")
 
     if confirmed == "CONFIRM":
         return True
@@ -179,18 +179,18 @@ def create_username(filename: str) -> str:
     """
 
     # initiate username
-    username = input('What is your prefered username?')
+    username = input('What is your prefered username?\nUsername: ')
 
     # looping until a valid username is chosen
     while True:
         # check if username is available
         if username_is_available(filename, username):
             if confirmed():
-                print(f"Amazing username! Your account has been created!")
+                print(f"Amazing username! Your account has been created!\n")
                 break
             else:
                 print("Username invalid.\n")
 
-        username = input("Go ahead and choose another username")
+        username = input("Go ahead and choose another username\nUsername: ")
         
     return username

@@ -1,9 +1,9 @@
 # imports
 from extra_functions import *
 from constants import *
-from discover_weekly.week1 import *
-from discover_weekly.week2 import *
-# from week3 import *
+from discover_weekly.week1 import discover_weekly_1
+from discover_weekly.week2 import discover_weekly_2
+from discover_weekly.week3 import discover_weekly_3
 
 # testing week1 code
 def week_1() -> None:
@@ -38,17 +38,17 @@ def week_2() -> None:
 
 # testing week 3 code
 def week_3() -> None:
-    """Print out all playlists from week 2.
+    """Print out all playlists from week 3.
     """
 
     for user in DEFAULT_USERS:
 
         # getting result playlist from week 3 - replace with week 3
-        dw1 = discover_weekly_1(DEFAULT_USERS[user], DEFAULT_PLAYLISTS)
+        dw3 = discover_weekly_3(DEFAULT_USERS[user])
 
         print("\n----------------------------------------------------")
         print(f"For user {user} we got the following playlist:\n")
-        for song in dw1:
+        for song in dw3:
             print(song)
         print("----------------------------------------------------\n")
 

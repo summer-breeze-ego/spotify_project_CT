@@ -3,9 +3,9 @@
 # imports
 from extra_functions import *
 from constants import *
-from discover_weekly.week1 import *
-from discover_weekly.week2 import *
-# from discover_weekly.week3 import *
+from discover_weekly.week1 import discover_weekly_1
+from discover_weekly.week2 import discover_weekly_2
+from discover_weekly.week3 import discover_weekly_3
 from manage_database import *
 
 # database functions
@@ -127,7 +127,22 @@ while True:
 
         # third choice
         case '3':
-            print("case 3")
+            # getting the dw3 playlist
+            initial_playlist = pull_user(FILENAME, username)
+            dw3_playlist = discover_weekly_3(initial_playlist)
+
+            # managing the full playlist of old and new dw songs
+            initial_playlist.extend(dw3_playlist)
+            edit_user(FILENAME, username, initial_playlist)
+            print("\n----------------------------------------------------")
+            print("----------------------------------------------------")
+            print(f"For user {username}")
+            print("----------------------------------------------------")
+            print("The full updated playlist is:\n")
+            for song in initial_playlist:
+                print(song)
+            print("----------------------------------------------------")
+            print("----------------------------------------------------")
         
         # fourth choice
         case '4':
