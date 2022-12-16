@@ -82,7 +82,6 @@ def pull_user(filename: str, username: str) -> List[str]:
 
 # create function to input new songs to certain line
 # check if user exists and then edit line with updated list of songs
-# also able to edit username?
 def edit_user(filename: str, username: str, playlist: List[str]) -> None:
     """Function updates playlist for user given in the file given.
 

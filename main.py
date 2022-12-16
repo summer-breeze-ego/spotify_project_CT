@@ -51,7 +51,7 @@ while True:
 
             # manage playlist
             initial_playlist = initial_users(1, [username], DATASET)[username] # generate playlist for user
-            print(initial_playlist) # for debugging
+            # print(initial_playlist) # for debugging
             print("Your account/playlist has been initiated.\n")
             edit_user(FILENAME, username, initial_playlist) # replace empty playlist with full one
         
@@ -152,7 +152,7 @@ while True:
         
         # default case
         case _:
-            exit("\nSomething ain't right, bruh, my bad...\nOr maybe you just wanted to quit...\n")
+            exit("\nSomething ain't right, my bad...\nOr maybe you just wanted to quit...\n")
 
     print("\n--------\nTHE END\n-------\n")
     break

@@ -162,6 +162,7 @@ def confirmed() -> bool:
 
     confirmed = input("Write \"CONFIRM\" to confirm action.\n")
 
+    # if input is right return true
     if confirmed == "CONFIRM":
         return True
     else:
@@ -185,6 +186,7 @@ def create_username(filename: str) -> str:
     while True:
         # check if username is available
         if username_is_available(filename, username):
+            # if confirmed make change
             if confirmed():
                 print(f"Amazing username! Your account has been created!\n")
                 break

@@ -1,6 +1,6 @@
 import csv
 import random
-from typing import List
+from typing import List, Tuple
 
 
 import os
@@ -39,16 +39,26 @@ def list_from_dataset(csv_path: str) -> List[str]:
     return god_dataset
 
 
-def shifts() -> List[str]:
+def shifts() -> tuple[list[str]]:
+	"""Categorizes all songs in 3 lists of 1 mood each.
 
+	Returns:
+		[tuple(List[str])]: 3 lists of songs as a tuple.
+	"""
+
+	# initiating lists of moods
 	# we figure that calm and lounge are basically the same so we removed lounge
 	happy = []
 	party = []
 	calming = []
 
+	# get list of songs
 	god_dataset = list_from_dataset(CSV_FILE_NAME)
 
+	# for every song in the database
 	for song in god_dataset:
+
+		# getting initial data for each songs
 		danceability = int(song[6])
 		valence = int(song[9])
 		energy = int(song[5])
@@ -58,21 +68,29 @@ def shifts() -> List[str]:
 		acousticness = int(song[11])
 		bpm = int(song[4])
 
-		#Happy
+		# if it's a happy song
 		if danceability >= 50 and valence >= 50 and energy >= 50:
 			happy.append(song[0])
 
-		#Party
+		# if it's a party song
 		if danceability >= 50 and energy >= 50 or popularity >=50 and loudness >= 50: #or bpm >= 140:
 			party.append(song[0])
 
-		#Calming
+		# if it's a calming songs 
 		if energy <= 50 and loudness <= 50 and acousticness <= 50:
 			calming.append(song[0])
 
 	return happy, party, calming
 
 def discover_weekly_3(users_playlist: List[str]) -> List[str]:
+	"""Generates discover weekly 3 songs based on incoming user playlist.
+
+	Args:
+		users_playlist (List[str]): list of user's songs.
+
+	Returns:
+		List[str]: list of discover weekly 3 songs.
+	"""
 
 	# getting mood shifts values from shifts() function
 	happy, party, calming = shifts()
