@@ -68,7 +68,6 @@ def list_from_dataset(csv_path: str) -> List[str]:
     for item in dataset:
         god_dataset.append(item)
 
-    # delete first row crap
     del god_dataset[0]
 
     return god_dataset
@@ -76,6 +75,11 @@ def list_from_dataset(csv_path: str) -> List[str]:
 list_from_dataset(csv_path)
 
 def shifts() -> List[str]:
+    """
+    Function takes no parameters, goes song by song in songs dataset and based on specific criterias puts every song
+    in a playlist(s) "happy", "party", "calming" and "lounge". 
+    :returns: 4 lists of songs as strings depending of their "mood". 
+    """
 
   happy = []
   party = []
@@ -110,7 +114,6 @@ def shifts() -> List[str]:
     if energy <= 50 and loudness <= 50 and acousticness <= 50:
       lounge.append(song[0])
 
-  #print(len(happy),len(party), len(calming), len(lounge))
   return happy
   return party
   return calming
@@ -118,7 +121,13 @@ def shifts() -> List[str]:
 
 
 # function to recommend 5 songs to each user 
-def recommendation_shifts():
+def recommendation_shifts() -> List[str]:
+    """
+    Function takes no parameters. It opens file with users and their current playlists, counts the number of songs that falls into the 
+    categories "happy", "party", "calming" and "lounge". Calculates the percentage of each "mood" in user's playlist and based on it, 
+    recommend a mix of songs either form several or one category.
+    :returns: a list of songs as strings.
+    """
 
   file = open('users_database.txt')
   
