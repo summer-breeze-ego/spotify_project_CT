@@ -4,7 +4,7 @@ from typing import List, Tuple
 
 
 import os
-os.chdir("/Users/augustincoman/Empire/Programming/spotify_project_CT")
+os.chdir("/Users/augustincoman/Library/CloudStorage/OneDrive-Personal/University/NL Courses/YEAR 1/Period 2/Computational Thinking/CT_PROJECT_64/spotify_project_CT_CODE")
 
 CSV_FILE_NAME = 'data/spotify-dataset.csv'
 

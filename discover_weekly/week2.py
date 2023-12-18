@@ -6,7 +6,7 @@ import csv # Import and opening CSV with data
 from typing import Tuple, List
 
 import os
-os.chdir("/Users/augustincoman/Empire/Programming/spotify_project_CT")
+os.chdir("/Users/augustincoman/Library/CloudStorage/OneDrive-Personal/University/NL Courses/YEAR 1/Period 2/Computational Thinking/CT_PROJECT_64/spotify_project_CT_CODE")
 
 # constants
 CSV_FILE_NAME = "data/spotify-dataset.csv" # path to csv file
